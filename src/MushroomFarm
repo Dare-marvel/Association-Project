@@ -1,0 +1,125 @@
+// Farmer.java
+class Farmer {
+    private String name;
+
+    public Farmer(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+// Mushroom.java
+class Mushroom {
+    private String type;
+
+    public Mushroom(String type) {
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
+    }
+}
+
+// Electricity.java
+class Electricity {
+    private String provider;
+    private int costPerUnit; // cost per unit of electricity
+
+    public Electricity(String provider, int costPerUnit) {
+        this.provider = provider;
+        this.costPerUnit = costPerUnit;
+    }
+
+    public String getProvider() {
+        return provider;
+    }
+
+    public int getCostPerUnit() {
+        return costPerUnit;
+    }
+}
+
+// Water.java
+class Water {
+    private int litersPerDay;
+
+    public Water(int litersPerDay) {
+        this.litersPerDay = litersPerDay;
+    }
+
+    public int getLitersPerDay() {
+        return litersPerDay;
+    }
+}
+
+// Harvest.java
+class Harvest {
+    private Mushroom[] mushrooms;
+    private int daysSpent;
+    private float totalCost;
+
+    public Harvest(Mushroom[] mushrooms, int daysSpent, float totalCost) {
+        this.mushrooms = mushrooms;
+        this.daysSpent = daysSpent;
+        this.totalCost = totalCost;
+    }
+
+    public void showHarvestDetails() {
+        System.out.println("------ Harvest Report ------");
+        System.out.println("Days Spent: " + daysSpent);
+        System.out.println("Total Cost: Rs." + totalCost);
+        System.out.print("Mushrooms Produced: ");
+        for (Mushroom m : mushrooms) {
+            System.out.print(m.getType() + " ");
+        }
+        System.out.println("\n----------------------------");
+    }
+}
+
+// MushroomFarm.java
+class MushroomFarm {
+    private Farmer farmer;
+
+    public MushroomFarm(Farmer farmer) {
+        this.farmer = farmer;
+    }
+
+    public Harvest farmMushrooms(Mushroom[] mushrooms, Electricity electricity, Water water, int days) {
+        // cost calculation
+        float totalCost = (electricity.getCostPerUnit() * 5 * days) // assume 5 units/day
+                        + (water.getLitersPerDay() * 0.5f * days);  // assume Rs.0.5 per liter
+        return new Harvest(mushrooms, days, totalCost);
+    }
+}
+
+// Main.java
+public class Main {
+    public static void main(String[] args) {
+        // Create farmer
+        Farmer ranchu = new Farmer("Ranchu");
+
+        // Create mushrooms
+        Mushroom[] mushrooms = {
+            new Mushroom("Button Mushroom"),
+            new Mushroom("Shiitake"),
+            new Mushroom("Oyster")
+        };
+
+        // Create resources
+        Electricity electricity = new Electricity("MSEB", 10); // Rs.10 per unit
+        Water water = new Water(50); // 50 liters per day
+
+        // Create farm
+        MushroomFarm farm = new MushroomFarm(ranchu);
+
+        // Simulate farming
+        Harvest harvest = farm.farmMushrooms(mushrooms, electricity, water, 7);
+
+        // Show harvest details
+        harvest.showHarvestDetails();
+    }
+}
