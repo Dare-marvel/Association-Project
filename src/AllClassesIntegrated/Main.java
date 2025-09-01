@@ -43,12 +43,16 @@ class Main {
         Hallucination hallucination1 = evaluator1.drinkSpecialJuice();
         Hallucination hallucination2 = evaluator2.drinkSpecialJuice();
         MusicConcert concert = hallucination1.imagineMusicConcert();
-        virus.serveCake();
+
         concert.startConcert();
         evaluator1.smileWeirdly();
         evaluator2.clapToImaginaryMusic();
         evaluator1.react();
         evaluator2.react();
+        virus.serveCake();
+        System.out.println("Meanwhile, Ranchu, Farhaan, and Raju sneaked past the chaos, laughing at the scene: “Yeh toh Chatur \n" +
+                "ke teacher’s day speech se bhi zyada mazedaar ho gaya yaar! Virus ko sadela Mushroom samajh rahe \n" +
+                "hain!”\n");
     }
 }
 
