@@ -84,9 +84,9 @@ public class Human {
     public void panicAtVirus() {
         System.out.println("Evaluator  panics, seeing the Virus as a rotten Mushroom and swing sticks and dodge glowing Cakes!");
     }
-    public void sneakAndComment() {
+        public void sneakAndComment() {
         System.out.println("Meanwhile, Rancho, Farhaan, and Raju sneaked past the chaos, laughing: "
-                + "\"This is even more fun than Chatur\’s Teacher\’s Day speech!\"");
+                + "\"This is even more fun than Chatur\'s Teacher\'s Day speech!");
     }
 
     // Cake related actions
@@ -144,4 +144,5 @@ class Virus extends Human {
         super(name);
     }
 }
+
 
