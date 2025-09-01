@@ -86,7 +86,7 @@ public class Human {
     }
     public void sneakAndComment() {
         System.out.println("Meanwhile, Rancho, Farhaan, and Raju sneaked past the chaos, laughing: "
-                + "\"This is even more fun than Chatur’s Teacher’s Day speech! They’re mistaking Virus for a rotten Mushroom!\"");
+                + "\"This is even more fun than Chatur\’s Teacher\’s Day speech!\"");
     }
 
     // Cake related actions
@@ -144,3 +144,4 @@ class Virus extends Human {
         super(name);
     }
 }
+
